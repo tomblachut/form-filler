@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import Introduction from './custom-fields/Introduction';
 import CustomFieldsList from './custom-fields/CustomFieldsList';
 import CustomFieldModal from './custom-fields/CustomFieldModal';
-import { getOptions, deleteCustomField, saveCustomField, saveSortedCustomFields } from '../actions';
+import { deleteCustomField, getOptions, saveCustomField, saveSortedCustomFields } from '../actions';
 import { shapeOfOptions } from '../prop-types';
 import { GetMessage } from '../../form-filler/helpers';
 
@@ -80,11 +80,11 @@ class CustomFieldsPage extends Component {
     return (
       <div>
         <h2>{GetMessage('customFields_title')}</h2>
-        <Introduction />
-        <hr />
+        <Introduction/>
+        <hr/>
         <p>
           <button className="btn btn-sm btn-primary" onClick={this.newCustomField}>
-            <i className="glyphicon glyphicon-plus-sign" /> {GetMessage('customFields_addFieldButtonText')}
+            <i className="glyphicon glyphicon-plus-sign"/> {GetMessage('customFields_addFieldButtonText')}
           </button>
         </p>
         <CustomFieldsList

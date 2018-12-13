@@ -14,7 +14,7 @@ const MatchFieldsToggleField = (fields) => {
     || matchIdField.meta.invalid
     || matchNameField.meta.invalid
     || matchClassField.meta.invalid
-    ;
+  ;
 
   return (
     <div className={`form-group${(fieldHasError) ? ' has-error' : ''}`}>
@@ -44,7 +44,7 @@ const MatchFieldsToggleField = (fields) => {
           type="checkbox"
           label={GetMessage('generalSettings_matchFields_useClass')}
         />
-        <br />
+        <br/>
         <p>{GetMessage('generalSettings_matchFields_help')}</p>
         {
           fieldHasError &&

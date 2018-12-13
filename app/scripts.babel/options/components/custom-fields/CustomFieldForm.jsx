@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Field, reduxForm, formValueSelector } from 'redux-form';
+import { Field, formValueSelector, reduxForm } from 'redux-form';
 import RandExp from 'randexp';
 
 import DataTypeField from './DataTypeField';
@@ -119,36 +119,36 @@ class CustomFieldForm extends Component {
     const { typeValue, onClose, handleSubmit, valid } = this.props;
 
     const dateTypeHelpText = (
-      <span dangerouslySetInnerHTML={this.getHtmlMarkup(GetMessage('customFields_dateTypeHelp'))} />
+      <span dangerouslySetInnerHTML={this.getHtmlMarkup(GetMessage('customFields_dateTypeHelp'))}/>
     );
 
     const alphanumericTypeHelpText = (
       <div>
         <div className="row">
           <div className="col-sm-6">
-            <code>L</code> {GetMessage('customFields_alNumHelp_uppercaseLetter')}<br />
-            <code>l</code> {GetMessage('customFields_alNumHelp_lowercaseLetter')}<br />
-            <code>D</code> {GetMessage('customFields_alNumHelp_upperAndLowercaseLetter')}<br />
-            <code>C</code> {GetMessage('customFields_alNumHelp_uppercaseConsonant')}<br />
-            <code>c</code> {GetMessage('customFields_alNumHelp_lowercaseConsonant')}<br />
+            <code>L</code> {GetMessage('customFields_alNumHelp_uppercaseLetter')}<br/>
+            <code>l</code> {GetMessage('customFields_alNumHelp_lowercaseLetter')}<br/>
+            <code>D</code> {GetMessage('customFields_alNumHelp_upperAndLowercaseLetter')}<br/>
+            <code>C</code> {GetMessage('customFields_alNumHelp_uppercaseConsonant')}<br/>
+            <code>c</code> {GetMessage('customFields_alNumHelp_lowercaseConsonant')}<br/>
             <code>E</code> {GetMessage('customFields_alNumHelp_upperAndLowercaseConsonant')}
           </div>
           <div className="col-sm-6">
-            <code>V</code> {GetMessage('customFields_alNumHelp_uppercaseVowel')}<br />
-            <code>v</code> {GetMessage('customFields_alNumHelp_lowercaseVowel')}<br />
-            <code>F</code> {GetMessage('customFields_alNumHelp_upperAndLowercaseVowel')}<br />
-            <code>x</code> {GetMessage('customFields_alNumHelp_number09')}<br />
+            <code>V</code> {GetMessage('customFields_alNumHelp_uppercaseVowel')}<br/>
+            <code>v</code> {GetMessage('customFields_alNumHelp_lowercaseVowel')}<br/>
+            <code>F</code> {GetMessage('customFields_alNumHelp_upperAndLowercaseVowel')}<br/>
+            <code>x</code> {GetMessage('customFields_alNumHelp_number09')}<br/>
             <code>X</code> {GetMessage('customFields_alNumHelp_number19')}
           </div>
         </div>
-        <br />
+        <br/>
         <p>{GetMessage('customFields_alNumHelp_otherCharactersAsIs')}</p>
       </div>
     );
 
     const regexTypeHelpText = (
       <div>
-        <p dangerouslySetInnerHTML={this.getHtmlMarkup(GetMessage('customFields_regExHelp'))} />
+        <p dangerouslySetInnerHTML={this.getHtmlMarkup(GetMessage('customFields_regExHelp'))}/>
         <button
           type="button"
           className="btn btn-xs btn-default"

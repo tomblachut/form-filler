@@ -1,21 +1,25 @@
 import AppConstants from './constants';
 
 import {
+  CsvToArray,
   FormFillerDefaultOptions,
   GetFormFillerOptions,
-  SaveFormFillerOptions,
   GetKeyboardShortcuts,
-  CsvToArray,
   MultipleLinesToArray,
+  SaveFormFillerOptions,
 } from '../form-filler/helpers';
 
 export function getOptions() {
   return (dispatch) => {
     dispatch({ type: AppConstants.FETCHING_OPTIONS });
 
-    GetFormFillerOptions().then((options) => {
-      dispatch({ type: AppConstants.RECEIVED_OPTIONS, options });
-    });
+    GetFormFillerOptions()
+      .then((options) => {
+        dispatch({
+          type: AppConstants.RECEIVED_OPTIONS,
+          options
+        });
+      });
   };
 }
 
@@ -23,14 +27,20 @@ export function resetOptions() {
   return (dispatch) => {
     const options = FormFillerDefaultOptions();
     SaveFormFillerOptions(options);
-    dispatch({ type: AppConstants.RECEIVED_OPTIONS, options });
+    dispatch({
+      type: AppConstants.RECEIVED_OPTIONS,
+      options
+    });
   };
 }
 
 export function saveOptions(options) {
   return (dispatch) => {
     SaveFormFillerOptions(options);
-    dispatch({ type: AppConstants.RECEIVED_OPTIONS, options });
+    dispatch({
+      type: AppConstants.RECEIVED_OPTIONS,
+      options
+    });
   };
 }
 
@@ -39,7 +49,10 @@ export function deleteCustomField(options, index) {
     const newOptions = Object.assign({}, options);
     newOptions.fields.splice(index, 1);
     SaveFormFillerOptions(newOptions);
-    dispatch({ type: AppConstants.RECEIVED_OPTIONS, options: newOptions });
+    dispatch({
+      type: AppConstants.RECEIVED_OPTIONS,
+      options: newOptions
+    });
   };
 }
 
@@ -48,7 +61,10 @@ export function saveSortedCustomFields(options, customFields) {
     const newOptions = Object.assign({}, options);
     newOptions.fields = customFields;
     SaveFormFillerOptions(newOptions);
-    dispatch({ type: AppConstants.RECEIVED_OPTIONS, options: newOptions });
+    dispatch({
+      type: AppConstants.RECEIVED_OPTIONS,
+      options: newOptions
+    });
   };
 }
 
@@ -119,7 +135,10 @@ export function saveCustomField(options, customField, customFieldIndex) {
     }
 
     SaveFormFillerOptions(newOptions);
-    dispatch({ type: AppConstants.RECEIVED_OPTIONS, options: newOptions });
+    dispatch({
+      type: AppConstants.RECEIVED_OPTIONS,
+      options: newOptions
+    });
   };
 }
 
@@ -127,8 +146,12 @@ export function getKeyboardShortcuts() {
   return (dispatch) => {
     dispatch({ type: AppConstants.FETCHING_KEYBOARD_SHORTCUTS });
 
-    GetKeyboardShortcuts().then((shortcuts) => {
-      dispatch({ type: AppConstants.RECEIVED_KEYBOARD_SHORTCUTS, shortcuts });
-    });
+    GetKeyboardShortcuts()
+      .then((shortcuts) => {
+        dispatch({
+          type: AppConstants.RECEIVED_KEYBOARD_SHORTCUTS,
+          shortcuts
+        });
+      });
   };
 }

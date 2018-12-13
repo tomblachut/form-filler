@@ -11,8 +11,7 @@ const EmailUsernameField = (fields) => {
 
   const fieldHasError = usernameField.meta.invalid
     || usernameListField.meta.invalid
-    || usernameRegExField.meta.invalid
-    ;
+    || usernameRegExField.meta.invalid;
 
   return (
     <div className={`form-group${(fieldHasError) ? ' has-error' : ''}`}>

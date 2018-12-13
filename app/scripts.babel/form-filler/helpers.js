@@ -204,7 +204,8 @@ function CsvToArray(csvString) {
   const arrayData = [];
 
   for (let i = 0; i < splitValues.length; i += 1) {
-    splitValues[i] = splitValues[i].replace(/^\s*/, '').replace(/\s*$/, '');
+    splitValues[i] = splitValues[i].replace(/^\s*/, '')
+      .replace(/\s*$/, '');
     if (splitValues[i].length > 0) {
       arrayData.push(splitValues[i]);
     }
@@ -218,7 +219,8 @@ function MultipleLinesToArray(text) {
   const arrayData = [];
 
   for (let i = 0; i < splitValues.length; i += 1) {
-    splitValues[i] = splitValues[i].replace(/^\s*/, '').replace(/\s*$/, '');
+    splitValues[i] = splitValues[i].replace(/^\s*/, '')
+      .replace(/\s*$/, '');
     if (splitValues[i].length > 0) {
       arrayData.push(splitValues[i]);
     }

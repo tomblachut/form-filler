@@ -15,24 +15,28 @@ class FormFiller {
   }
 
   fillAllInputs() {
-    jQuery('input:enabled:not([readonly])').each((index, element) => {
-      this.dataGenerator.fillInputTagElement(element);
-    });
+    jQuery('input:enabled:not([readonly])')
+      .each((index, element) => {
+        this.dataGenerator.fillInputTagElement(element);
+      });
 
-    jQuery('textarea:enabled:not([readonly])').each((index, element) => {
-      this.dataGenerator.fillTextAreaTagElement(element);
-    });
+    jQuery('textarea:enabled:not([readonly])')
+      .each((index, element) => {
+        this.dataGenerator.fillTextAreaTagElement(element);
+      });
 
-    jQuery('select:enabled:not([readonly])').each((index, element) => {
-      this.dataGenerator.fillSelectTagElement(element);
-    });
+    jQuery('select:enabled:not([readonly])')
+      .each((index, element) => {
+        this.dataGenerator.fillSelectTagElement(element);
+      });
 
-    jQuery('[contenteditable]').each((index, element) => {
-      if (element.isContentEditable) {
-        // eslint-disable-next-line no-param-reassign
-        element.textContent = this.dataGenerator.generateParagraph(5, 100);
-      }
-    });
+    jQuery('[contenteditable]')
+      .each((index, element) => {
+        if (element.isContentEditable) {
+          // eslint-disable-next-line no-param-reassign
+          element.textContent = this.dataGenerator.generateParagraph(5, 100);
+        }
+      });
   }
 
   fillThisInput() {
@@ -59,27 +63,32 @@ class FormFiller {
     const theElement = this.clickedElement || document.activeElement;
 
     if (theElement && theElement.tagName.toLowerCase() !== 'body') {
-      const form = jQuery(theElement).closest('form');
+      const form = jQuery(theElement)
+        .closest('form');
 
       if (form.length > 0) {
-        jQuery('input:enabled:not([readonly])', form[0]).each((index, element) => {
-          this.dataGenerator.fillInputTagElement(element);
-        });
+        jQuery('input:enabled:not([readonly])', form[0])
+          .each((index, element) => {
+            this.dataGenerator.fillInputTagElement(element);
+          });
 
-        jQuery('textarea:enabled:not([readonly])', form[0]).each((index, element) => {
-          this.dataGenerator.fillTextAreaTagElement(element);
-        });
+        jQuery('textarea:enabled:not([readonly])', form[0])
+          .each((index, element) => {
+            this.dataGenerator.fillTextAreaTagElement(element);
+          });
 
-        jQuery('select:enabled:not([readonly])', form[0]).each((index, element) => {
-          this.dataGenerator.fillSelectTagElement(element);
-        });
+        jQuery('select:enabled:not([readonly])', form[0])
+          .each((index, element) => {
+            this.dataGenerator.fillSelectTagElement(element);
+          });
 
-        jQuery('[contenteditable]', form[0]).each((index, element) => {
-          if (element.isContentEditable) {
-            // eslint-disable-next-line no-param-reassign
-            element.textContent = this.dataGenerator.generateParagraph(5, 100);
-          }
-        });
+        jQuery('[contenteditable]', form[0])
+          .each((index, element) => {
+            if (element.isContentEditable) {
+              // eslint-disable-next-line no-param-reassign
+              element.textContent = this.dataGenerator.generateParagraph(5, 100);
+            }
+          });
       }
     }
 

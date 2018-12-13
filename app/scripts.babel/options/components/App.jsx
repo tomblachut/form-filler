@@ -69,7 +69,7 @@ class App extends Component {
         <div className="row">
           <div className="col-sm-3">
             <h1>
-              <img src="images/logo.svg" height="32" alt={GetMessage('extensionName')} />
+              <img src="images/logo.svg" height="32" alt={GetMessage('extensionName')}/>
             </h1>
             <ul className="nav nav-pills nav-stacked">
               <li className={this.getActiveClass('/', true)}>
@@ -87,9 +87,9 @@ class App extends Component {
             </ul>
             <div id="about">
               <p>
-                <span dangerouslySetInnerHTML={this.getRateThisExtensionMessage()} />
+                <span dangerouslySetInnerHTML={this.getRateThisExtensionMessage()}/>
                 {' '}
-                <span dangerouslySetInnerHTML={this.getSendFeedbackMessage()} />
+                <span dangerouslySetInnerHTML={this.getSendFeedbackMessage()}/>
               </p>
               <ul className="list-inline">
                 <li>
@@ -107,11 +107,11 @@ class App extends Component {
             </div>
           </div>
           <div className="col-sm-9">
-            <Route path="/" exact component={GeneralSettingsPage} />
-            <Route path="/custom-fields" component={CustomFieldsPage} />
-            <Route path="/keyboard-shortcuts" component={KeyboardShortcutsPage} />
-            <Route path="/backup" component={BackupAndRestorePage} />
-            <Route path="/changelog" component={ChangelogPage} />
+            <Route path="/" exact component={GeneralSettingsPage}/>
+            <Route path="/custom-fields" component={CustomFieldsPage}/>
+            <Route path="/keyboard-shortcuts" component={KeyboardShortcutsPage}/>
+            <Route path="/backup" component={BackupAndRestorePage}/>
+            <Route path="/changelog" component={ChangelogPage}/>
           </div>
         </div>
       </div>

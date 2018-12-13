@@ -9,65 +9,75 @@ const ChangelogPage = () => (
     <ul>
       <li>Fixed an error with sorting custom fields in Firefox.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.8.8</strong></p>
     <ul>
-      <li>Fixed a typo. (<a href="https://github.com/husainshabbir/form-filler/pull/71" target="_blank" rel="noopener noreferrer">#71</a>)</li>
-      <li>Use all labels of fields for matching (<a href="https://github.com/husainshabbir/form-filler/pull/66" target="_blank" rel="noopener noreferrer">#66</a>).</li>
+      <li>Fixed a typo. (<a href="https://github.com/husainshabbir/form-filler/pull/71" target="_blank"
+                            rel="noopener noreferrer">#71</a>)
+      </li>
+      <li>Use all labels of fields for matching (<a href="https://github.com/husainshabbir/form-filler/pull/66"
+                                                    target="_blank" rel="noopener noreferrer">#66</a>).
+      </li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.8.7</strong></p>
     <ul>
-      <li>Fixed issue in setting select fields via custom field rules. (<a href="https://github.com/husainshabbir/form-filler/pull/54" target="_blank" rel="noopener noreferrer">#54</a>)</li>
+      <li>Fixed issue in setting select fields via custom field rules. (<a
+        href="https://github.com/husainshabbir/form-filler/pull/54" target="_blank" rel="noopener noreferrer">#54</a>)
+      </li>
       <li>Fixed issue with displaying keyboard shortcut descriptions in Chrome.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.8.6</strong></p>
     <ul>
       <li>Added Chinese localization (<a href="https://github.com/rowthan">rowthan</a>)</li>
-      <li>Data generation for textarea fields can be customized using Text, Alphanumeric, Regular Expression and Randomized List custom field types.</li>
+      <li>Data generation for textarea fields can be customized using Text, Alphanumeric, Regular Expression and
+        Randomized List custom field types.
+      </li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.8.5</strong></p>
     <ul>
       <li>Workaround for Firefox problem with backup settings.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.8.4</strong></p>
     <ul>
       <li>Fixed change tracking in custom fields.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.8.3</strong></p>
     <ul>
       <li>Fixed issue in validating and saving Number custom field types.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.8.2</strong></p>
     <ul>
       <li>Fixed a random number generation bug.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.8.1</strong></p>
     <ul>
       <li>Options from the old version of the extension are migrated to the new one.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.8.0</strong></p>
     <ul>
       <li>Added option to generate email username segment using regular expressions.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.7.0</strong></p>
     <ul>
       <li>Form Filler is now on Firefox!</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.5.1</strong></p>
     <ul>
-      <li>Handling selects with a disabled selected value correctly. (<a href="https://github.com/husainshabbir/form-filler/pull/33" target="_blank" rel="noopener noreferrer">#33</a>)</li>
+      <li>Handling selects with a disabled selected value correctly. (<a
+        href="https://github.com/husainshabbir/form-filler/pull/33" target="_blank" rel="noopener noreferrer">#33</a>)
+      </li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.5.0</strong></p>
     <ul>
       <li>
@@ -78,17 +88,19 @@ const ChangelogPage = () => (
       <li>Fixed a bug that caused an incorrect color to be generated in some cases.</li>
       <li>Fixed a bug that caused incorrect field matching in some cases.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.4.4</strong></p>
     <ul>
       <li>Fixed a bug that prevented some dropdown fields from being filled.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.4.5</strong></p>
     <ul>
-      <li>Fixed a call to a removed jQuery size() function call. (<a href="https://github.com/husainshabbir/form-filler/pull/25" target="_blank" rel="noopener noreferrer">#25</a>)</li>
+      <li>Fixed a call to a removed jQuery size() function call. (<a
+        href="https://github.com/husainshabbir/form-filler/pull/25" target="_blank" rel="noopener noreferrer">#25</a>)
+      </li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.4.3</strong></p>
     <ul>
       <li>
@@ -96,26 +108,36 @@ const ChangelogPage = () => (
         how to change them.
       </li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.4.2</strong></p>
     <ul>
-      <li>Added option to always check certain checkboxes (<a href="https://github.com/husainshabbir/form-filler/pull/11" target="_blank" rel="noopener noreferrer">#11</a>)</li>
-      <li>Support for non-latin characters in Import and Export (<a href="https://github.com/husainshabbir/form-filler/pull/18" target="_blank" rel="noopener noreferrer">#18</a>)</li>
-      <li>Added default keyboard shortcuts (<a href="https://github.com/husainshabbir/form-filler/pull/20" target="_blank" rel="noopener noreferrer">#20</a>)</li>
+      <li>Added option to always check certain checkboxes (<a
+        href="https://github.com/husainshabbir/form-filler/pull/11" target="_blank" rel="noopener noreferrer">#11</a>)
+      </li>
+      <li>Support for non-latin characters in Import and Export (<a
+        href="https://github.com/husainshabbir/form-filler/pull/18" target="_blank" rel="noopener noreferrer">#18</a>)
+      </li>
+      <li>Added default keyboard shortcuts (<a href="https://github.com/husainshabbir/form-filler/pull/20"
+                                               target="_blank" rel="noopener noreferrer">#20</a>)
+      </li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.4.1</strong></p>
     <ul>
-      <li>Randomized list now works for select elements (<a href="https://github.com/husainshabbir/form-filler/pull/10" target="_blank" rel="noopener noreferrer">#10</a>).</li>
+      <li>Randomized list now works for select elements (<a href="https://github.com/husainshabbir/form-filler/pull/10"
+                                                            target="_blank" rel="noopener noreferrer">#10</a>).
+      </li>
       <li>Bug fix when generating telephone number.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.4.0</strong></p>
     <ul>
-      <li>Field matching now works with label text (<a href="https://github.com/husainshabbir/form-filler/pull/5" target="_blank" rel="noopener noreferrer">#5</a>).</li>
+      <li>Field matching now works with label text (<a href="https://github.com/husainshabbir/form-filler/pull/5"
+                                                       target="_blank" rel="noopener noreferrer">#5</a>).
+      </li>
       <li>Added an option to customize what attributes are used for matching.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.3.1</strong></p>
     <ul>
       <li>Added support for filling forms inside iframes.</li>
@@ -127,17 +149,17 @@ const ChangelogPage = () => (
       <span className="label label-info">NOTE</span> If you have saved a backup of
       the settings, please take a fresh backup for the new settings to be included.
     </p>
-    <hr />
+    <hr/>
     <p><strong>Version 2.2.2</strong></p>
     <ul>
       <li>Fixed an error caused by inputs with a missing type attribute.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.2.1</strong></p>
     <ul>
       <li>Bug fixes.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.2.0</strong></p>
     <ul>
       <li>Added support for importing and exporting settings.</li>
@@ -160,12 +182,12 @@ const ChangelogPage = () => (
       Form Filler cannot fill forms that are loaded inside an iframe (even if
       you use the context menu).
     </p>
-    <hr />
+    <hr/>
     <p><strong>Version 2.1.0</strong></p>
     <ul>
       <li>Added ability to trigger click events on radio buttons and checkboxes.</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 2.0.0</strong></p>
     <ul>
       <li>Added support for custom fields</li>
@@ -182,12 +204,12 @@ const ChangelogPage = () => (
       custom fields for generating random data. Settings from previous versions
       cannot be migrated and will need to be set again.
     </p>
-    <hr />
+    <hr/>
     <p><strong>Version 1.3.0</strong></p>
     <ul>
       <li>Added support for keyboard shortcut</li>
     </ul>
-    <hr />
+    <hr/>
     <p><strong>Version 1.2.0</strong></p>
     <ul>
       <li>Select multiple values in a listbox</li>

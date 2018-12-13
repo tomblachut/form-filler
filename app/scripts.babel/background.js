@@ -1,15 +1,16 @@
-import { GetFormFillerOptions, SaveFormFillerOptions, CreateContextMenus, GetMessage } from './form-filler/helpers';
+import { CreateContextMenus, GetFormFillerOptions, GetMessage, SaveFormFillerOptions } from './form-filler/helpers';
 
 const analyticsTrackingCode = 'UA-XXXXXXX-X'; // UA-9183424-4 / UA-XXXXXXX-X
 
 function handleMessage(request, sender, sendResponse) {
   if (request === 'getOptions') {
-    GetFormFillerOptions().then((result) => {
-      sendResponse({
-        options: result,
-        analyticsTrackingCode,
+    GetFormFillerOptions()
+      .then((result) => {
+        sendResponse({
+          options: result,
+          analyticsTrackingCode,
+        });
       });
-    });
     return true;
   }
 
@@ -45,9 +46,10 @@ chrome.browserAction.onClicked.addListener(() => {
   });
 });
 
-GetFormFillerOptions().then((options) => {
-  CreateContextMenus(options.enableContextMenu);
-});
+GetFormFillerOptions()
+  .then((options) => {
+    CreateContextMenus(options.enableContextMenu);
+  });
 
 chrome.contextMenus.onClicked.addListener((info) => {
   if (info.menuItemId === 'form-filler-all') {

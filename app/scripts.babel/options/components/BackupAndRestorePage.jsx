@@ -48,7 +48,8 @@ class BackupAndRestorePage extends Component {
 
   exportSettings() {
     const encodedData = utf8ToBase64(JSON.stringify(this.props.options));
-    const dateStamp = moment().format('YYYY-MM-DD');
+    const dateStamp = moment()
+      .format('YYYY-MM-DD');
     const isFirefox = GetBrowser() === 'Firefox';
 
     if (isFirefox) {
@@ -101,12 +102,14 @@ class BackupAndRestorePage extends Component {
 
   // eslint-disable-next-line class-methods-use-this
   triggerImportSettings() {
-    document.getElementById('file').click();
+    document.getElementById('file')
+      .click();
   }
 
   // eslint-disable-next-line class-methods-use-this
   selectTextAreaText() {
-    document.getElementById('backupTextArea').select();
+    document.getElementById('backupTextArea')
+      .select();
   }
 
   render() {
@@ -147,8 +150,8 @@ class BackupAndRestorePage extends Component {
           </button>
         </p>
         {backupDataElements}
-        <input type="file" className="hide" id="file" onChange={this.importSettings} />
-        { this.state.hasError && <p className="alert alert-danger">{this.state.errorMessage}</p> }
+        <input type="file" className="hide" id="file" onChange={this.importSettings}/>
+        {this.state.hasError && <p className="alert alert-danger">{this.state.errorMessage}</p>}
         {
           this.state.showSuccess &&
           <p className="alert alert-success">{GetMessage('backupRestore_settingImportSuccessMessage')}</p>

@@ -51,13 +51,19 @@
   },
   "content_scripts": [
     {
-      "matches": [ "<all_urls>" ],
-      "js": ["scripts/content-script.js"],
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "scripts/content-script.js"
+      ],
       "all_frames": true
     }
   ],
   "background": {
-    "scripts": ["scripts/background.js"],
+    "scripts": [
+      "scripts/background.js"
+    ],
     "persistent": false
   },
   "options_ui": {

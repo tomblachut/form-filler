@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Field, Fields, reduxForm, formValueSelector } from 'redux-form';
+import { Field, Fields, formValueSelector, reduxForm } from 'redux-form';
 
 import { CsvToArray, GetMessage } from '../../../form-filler/helpers';
 import DataGenerator from '../../../form-filler/data-generator';
@@ -146,7 +146,8 @@ class GeneralSettingsForm extends Component {
             />
             <div className="help-block">
               <span className="label label-info">{GetMessage('note')}</span>
-              <span dangerouslySetInnerHTML={this.getHtmlMarkup(GetMessage('generalSettings_ignoreFieldsWithContentHelp'))} />
+              <span
+                dangerouslySetInnerHTML={this.getHtmlMarkup(GetMessage('generalSettings_ignoreFieldsWithContentHelp'))}/>
             </div>
           </div>
         </div>
@@ -210,7 +211,7 @@ class GeneralSettingsForm extends Component {
             />
           </div>
         </div>
-        <br />
+        <br/>
         <div className="form-group">
           <div className="col-sm-offset-3 col-sm-9">
             <button
@@ -228,7 +229,7 @@ class GeneralSettingsForm extends Component {
             >
               {GetMessage('reset')}
             </button>
-            { showSavedMessage && <span className="saved-msg">{GetMessage('generalSettings_settingsSaved')}</span> }
+            {showSavedMessage && <span className="saved-msg">{GetMessage('generalSettings_settingsSaved')}</span>}
           </div>
         </div>
       </form>

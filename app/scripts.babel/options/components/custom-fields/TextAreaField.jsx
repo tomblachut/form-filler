@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const TextAreaField = ({
-  input,
-  label,
-  placeholder,
-  helpText,
-  meta: {
-    dirty,
-    touched,
-    error,
-  },
-}) => (
+                         input,
+                         label,
+                         placeholder,
+                         helpText,
+                         meta: {
+                           dirty,
+                           touched,
+                           error,
+                         },
+                       }) => (
   <div className={`form-group${touched && dirty && error ? ' has-error' : ''}`}>
     <label className="control-label col-sm-3">{label}</label>
     <div className="col-sm-9">
@@ -20,8 +20,8 @@ const TextAreaField = ({
         className="form-control"
         placeholder={placeholder}
       />
-      { helpText && <div className="help-block">{helpText}</div> }
-      { touched && dirty && ((error && <span className="help-block">{error}</span>)) }
+      {helpText && <div className="help-block">{helpText}</div>}
+      {touched && dirty && ((error && <span className="help-block">{error}</span>))}
     </div>
   </div>
 );

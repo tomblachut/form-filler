@@ -28,8 +28,8 @@ const DataTypeField = ({ input, label, helpText, meta: { dirty, touched, error }
           <option value="randomized-list">{GetMessage('customFields_dataType_randomizedList')}</option>
         </optgroup>
       </select>
-      { helpText && <div className="help-block">{helpText}</div> }
-      { touched && dirty && ((error && <span className="help-block">{error}</span>)) }
+      {helpText && <div className="help-block">{helpText}</div>}
+      {touched && dirty && ((error && <span className="help-block">{error}</span>))}
     </div>
   </div>
 );

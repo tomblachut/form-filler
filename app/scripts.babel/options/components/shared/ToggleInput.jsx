@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const ToggleInput = ({ input, label, type }) => (
   <div className={type}>
     <label>
-      <input {...input} type={type} />
+      <input {...input} type={type}/>
       {label}
     </label>
   </div>

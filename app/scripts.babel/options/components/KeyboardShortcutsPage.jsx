@@ -25,7 +25,8 @@ class KeyboardShortcutsPage extends Component {
   // eslint-disable-next-line class-methods-use-this
   getTranslatedDescription(key) {
     if (key.startsWith('__MSG_')) {
-      return GetMessage(key.replace('__MSG_', '').replace('__', ''));
+      return GetMessage(key.replace('__MSG_', '')
+        .replace('__', ''));
     }
     return key;
   }
@@ -45,24 +46,24 @@ class KeyboardShortcutsPage extends Component {
         <h2>{GetMessage('kbdShortcuts_title')}</h2>
         <table className="table table-bordered table-condensed">
           <tbody>
-            {
-              keyboardShortcuts.map((item, index) => {
-                if (item.description) {
-                  return (
-                    <tr key={index}>
-                      <td className="narrow">{item.shortcut ? <kbd>{item.shortcut}</kbd> : notSetText}</td>
-                      <td>{this.getTranslatedDescription(item.description)}</td>
-                    </tr>
-                  );
-                }
+          {
+            keyboardShortcuts.map((item, index) => {
+              if (item.description) {
+                return (
+                  <tr key={index}>
+                    <td className="narrow">{item.shortcut ? <kbd>{item.shortcut}</kbd> : notSetText}</td>
+                    <td>{this.getTranslatedDescription(item.description)}</td>
+                  </tr>
+                );
+              }
 
-                return null;
-              })
-            }
+              return null;
+            })
+          }
           </tbody>
         </table>
-        { isFirefox && <p dangerouslySetInnerHTML={this.getHtmlMessage('kbdShortcuts_firefoxComingSoon')} /> }
-        { !isFirefox && <p dangerouslySetInnerHTML={this.getHtmlMessage('kbdShortcuts_changeInstructions')} /> }
+        {isFirefox && <p dangerouslySetInnerHTML={this.getHtmlMessage('kbdShortcuts_firefoxComingSoon')}/>}
+        {!isFirefox && <p dangerouslySetInnerHTML={this.getHtmlMessage('kbdShortcuts_changeInstructions')}/>}
       </div>
     );
   }

@@ -10,7 +10,7 @@ import App from './options/components/App';
 ReactDOM.render(
   <Provider store={Store}>
     <HashRouter>
-      <Route path="/" component={App} />
+      <Route path="/" component={App}/>
     </HashRouter>
   </Provider>,
   document.getElementById('app'),

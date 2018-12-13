@@ -24,7 +24,8 @@ class DataGenerator {
   }
 
   sanitizeName(name) {
-    return name.replace(/[^a-zA-Z0-9]+/g, '').toLowerCase();
+    return name.replace(/[^a-zA-Z0-9]+/g, '')
+      .toLowerCase();
   }
 
   generateNumber(start, end) {
@@ -76,7 +77,8 @@ class DataGenerator {
         || resultPhrase.substring(phraseLength - 1, phraseLength) === '.'
         || resultPhrase.substring(phraseLength - 1, phraseLength) === '?'
       ) {
-        word = word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
+        word = word.substring(0, 1)
+          .toUpperCase() + word.substring(1, word.length);
       }
 
       resultPhrase += phraseLength > 0 ? ` ${word}` : word;
@@ -196,12 +198,14 @@ class DataGenerator {
     const length = this.generateNumber(5, 20);
     const resultPhrase = this.generateWords(length, maxLength);
 
-    return resultPhrase.replace(/[^\w\s]|_/g, '').replace(/\s+/g, ' ');
+    return resultPhrase.replace(/[^\w\s]|_/g, '')
+      .replace(/\s+/g, ' ');
   }
 
   generatePassword() {
     if (this.options.passwordSettings.mode === 'random') {
-      const password = this.generateScrambledWord(8).toLowerCase();
+      const password = this.generateScrambledWord(8)
+        .toLowerCase();
       console.info(`Generated Password: ${password}`);
       return password;
     }
@@ -216,7 +220,7 @@ class DataGenerator {
       case 'list':
         username = emailSettings.usernameList[
           Math.floor(Math.random() * (emailSettings.usernameList.length))
-        ];
+          ];
         break;
 
       case 'username':
@@ -251,7 +255,8 @@ class DataGenerator {
     }
 
     if (!username || username.length === 0) {
-      username = this.generateScrambledWord(4, 10).toLowerCase();
+      username = this.generateScrambledWord(4, 10)
+        .toLowerCase();
     }
 
     let domain = '';
@@ -262,7 +267,8 @@ class DataGenerator {
     }
 
     if (!domain || domain.length === 0) {
-      domain = `${this.generateScrambledWord().toLowerCase()}.com`;
+      domain = `${this.generateScrambledWord()
+        .toLowerCase()}.com`;
     }
 
     if (domain.indexOf('@') === -1) {
@@ -273,7 +279,8 @@ class DataGenerator {
   }
 
   generateWebsite() {
-    const scrambledWord = this.generateScrambledWord().toLowerCase();
+    const scrambledWord = this.generateScrambledWord()
+      .toLowerCase();
     const randomDomain = data.domains[this.generateNumber(0, data.domains.length - 1)];
     return (`http://www.${scrambledWord}${randomDomain}`);
   }
@@ -335,7 +342,7 @@ class DataGenerator {
     const partTwo = this.generateLastName();
     const suffix = data.organizationSuffix[
       this.generateNumber(0, data.organizationSuffix.length - 1)
-    ];
+      ];
 
     return `${partOne}${connector}${partTwo} ${suffix}`;
   }
@@ -417,7 +424,8 @@ class DataGenerator {
         return this.generateNumber(field.min, field.max);
 
       case 'date':
-        return moment(this.generateDate()).format(field.template);
+        return moment(this.generateDate())
+          .format(field.template);
 
       case 'url':
         return this.generateWebsite();
@@ -459,14 +467,16 @@ class DataGenerator {
     const radioElement = list[Math.floor(Math.random() * list.length)];
 
     if (this.options.triggerClickEvents) {
-      jQuery(radioElement).click();
+      jQuery(radioElement)
+        .click();
     } else {
       radioElement.checked = true;
     }
   }
 
   shouldIgnoreField(element) {
-    if (this.options.ignoreHiddenFields && jQuery(element).is(':hidden')) {
+    if (this.options.ignoreHiddenFields && jQuery(element)
+      .is(':hidden')) {
       return true;
     }
 
@@ -487,7 +497,10 @@ class DataGenerator {
       }
 
       if (element.type !== 'checkbox' && element.type !== 'radio') {
-        if (jQuery(element).val() && jQuery(element).val().trim().length > 0) {
+        if (jQuery(element)
+          .val() && jQuery(element)
+          .val()
+          .trim().length > 0) {
           return true;
         }
       }
@@ -514,7 +527,8 @@ class DataGenerator {
       if (this.isAnyMatch(element.name.toLowerCase(), this.options.agreeTermsFields)) {
         element.checked = true;
       } else if (this.options.triggerClickEvents) {
-        jQueryElement.prop('checked', (Math.random() > 0.5)).click();
+        jQueryElement.prop('checked', (Math.random() > 0.5))
+          .click();
       } else {
         element.checked = (Math.random() > 0.5) ? 'checked' : '';
       }
@@ -578,7 +592,10 @@ class DataGenerator {
     } else if (elementType === 'url') {
       element.value = this.generateWebsite();
     } else if (elementType === 'color') {
-      const randomHexValue = (`000000${Math.random().toString(16).slice(2, 8).toUpperCase()}`).slice(-6);
+      const randomHexValue = (`000000${Math.random()
+        .toString(16)
+        .slice(2, 8)
+        .toUpperCase()}`).slice(-6);
       element.value = `#${randomHexValue}`;
     } else if (elementType === 'search') {
       element.value = this.generateWords(1);
@@ -608,7 +625,10 @@ class DataGenerator {
     }
 
     const fieldMatches = ['text', 'alphanumeric', 'regex', 'randomized-list'];
-    const field = this.getFieldFromElement(this.getSanitizedElementName(element), fieldMatches) || { min: 10, max: 20 };
+    const field = this.getFieldFromElement(this.getSanitizedElementName(element), fieldMatches) || {
+      min: 10,
+      max: 20
+    };
 
     element.value = this.getRandomDataForField(field, element);
 
@@ -649,7 +669,8 @@ class DataGenerator {
       }
 
       if (valueExists) {
-        jQuery(element).val(value);
+        jQuery(element)
+          .val(value);
       } else {
         // Use the default random option item selection because there was
         // no field type or value found.

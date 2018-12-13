@@ -600,6 +600,7 @@ class DataGenerator {
     } else if (elementType === 'search') {
       element.value = this.generateWords(1);
     } else if (elementType === 'text' || elementType === '' || elementType === undefined) {
+      // TODO Check
       if (this.isAnyMatch(element.name.toLowerCase(), this.options.confirmFields)) {
         element.value = this.previousValue;
       } else {
